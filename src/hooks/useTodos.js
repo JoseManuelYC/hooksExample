@@ -43,5 +43,7 @@ export const useTodo = () => {
     handleDeleteTodo,
     handleCheckTodo,
     handleNewTodo,
+    todosCount: todos.length,
+    pendingTodos: todos.filter((todo) => !todo.done).length,
   };
 };

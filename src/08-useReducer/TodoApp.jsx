@@ -1,15 +1,22 @@
 import { AddTodo } from "../components/AddTodo";
 import { TodoList } from "../components/TodoList";
-import { useTodo } from "../hooks/useTodos";
+import { useTodo } from "../hooks";
 
 export const TodoApp = () => {
-  const { todos, handleDeleteTodo, handleCheckTodo, handleNewTodo } = useTodo(
-    []
-  ); // Custom Hook
+  const {
+    todos,
+    todosCount,
+    pendingTodos,
+    handleDeleteTodo,
+    handleCheckTodo,
+    handleNewTodo,
+  } = useTodo([]); // Custom Hook
 
   return (
     <>
-      <h1>| Todo App |- JMYC</h1>
+      <h1>
+        Todos totales: {todosCount} - Todos pendientes:{pendingTodos}
+      </h1>
       <hr />
       <div className="row">
         <div className="col-7">
