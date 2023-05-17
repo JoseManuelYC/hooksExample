@@ -12,7 +12,11 @@ export const MultipleHooks = () => {
     <>
       <h1>Multiple Hooks</h1>
       {isLoading ? <LoadingQuote /> : <Quote quote={quote} author={author} />}
-      <button className="btn btn-primary" onClick={onNewQuote}>
+      <button
+        disabled={isLoading}
+        className="btn btn-primary"
+        onClick={onNewQuote}
+      >
         Next Quote
       </button>
     </>
