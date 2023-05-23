@@ -2,7 +2,7 @@ import { LoadingQuote, Quote } from "../components";
 import { useCounter, useFetch } from "../hooks";
 
 export const MultipleHooks = () => {
-  const { onNewQuote, counter } = useCounter();
+  const { increment, counter } = useCounter(1);
   const { data, isLoading, hasError } = useFetch(
     `https://api.breakingbadquotes.xyz/v1/quotes/${counter}`
   );
@@ -15,7 +15,7 @@ export const MultipleHooks = () => {
       <button
         disabled={isLoading}
         className="btn btn-primary"
-        onClick={onNewQuote}
+        onClick={() => increment()}
       >
         Next Quote
       </button>
